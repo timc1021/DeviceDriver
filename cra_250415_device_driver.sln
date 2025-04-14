@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cra_250415_device_driver", "cra_250415_device_driver\cra_250415_device_driver.vcxproj", "{F4AA57C5-C042-4F78-9ACB-961D94DEC112}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4AA57C5-C042-4F78-9ACB-961D94DEC112}.Debug|x64.ActiveCfg = Debug|x64
+		{F4AA57C5-C042-4F78-9ACB-961D94DEC112}.Debug|x64.Build.0 = Debug|x64
+		{F4AA57C5-C042-4F78-9ACB-961D94DEC112}.Debug|x86.ActiveCfg = Debug|Win32
+		{F4AA57C5-C042-4F78-9ACB-961D94DEC112}.Debug|x86.Build.0 = Debug|Win32
+		{F4AA57C5-C042-4F78-9ACB-961D94DEC112}.Release|x64.ActiveCfg = Release|x64
+		{F4AA57C5-C042-4F78-9ACB-961D94DEC112}.Release|x64.Build.0 = Release|x64
+		{F4AA57C5-C042-4F78-9ACB-961D94DEC112}.Release|x86.ActiveCfg = Release|Win32
+		{F4AA57C5-C042-4F78-9ACB-961D94DEC112}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E468BAB2-701C-48BB-A9F6-2D2A8F766365}
+	EndGlobalSection
+EndGlobal
