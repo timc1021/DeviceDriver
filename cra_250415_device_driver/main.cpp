@@ -32,40 +32,22 @@ TEST(DeviceDriver, WriteHW) {
 }
 
 TEST(DeviceDriver, ReadException) {
-	int exception_occur = 0;
 	FlashMock mock;
 	EXPECT_CALL(mock, read(0xbb))
 		.WillOnce(Return(1))
 		.WillRepeatedly(Return(0));
 
 	DeviceDriver driver{ &mock };
-	try {
-		int data = driver.read(0xbb);
-	}
-	catch (ReadFailException& e) {
-		std::cout << e.what() << std::endl;
-		exception_occur = 1;
-	}
-	
-	EXPECT_EQ(1, exception_occur);
+	EXPECT_THROW(driver.read(0xbb), ReadFailException);
 }
 
 TEST(DeviceDriver, WriteException) {
-	int exception_occur = 0;
 	FlashMock mock;
 	EXPECT_CALL(mock, read(0xbb))
 		.WillRepeatedly(Return(0));
 
 	DeviceDriver driver{ &mock };
-	try {
-		driver.write(0xbb, 0x1);
-	}
-	catch (WriteFailException& e) {
-		std::cout << e.what() << std::endl;
-		exception_occur = 1;
-	}
-
-	EXPECT_EQ(1, exception_occur);
+	EXPECT_THROW(driver.write(0xbb, 0x1), WriteFailException);
 }
 
 int main() {
