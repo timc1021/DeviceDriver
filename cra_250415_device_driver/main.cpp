@@ -31,6 +31,41 @@ TEST(DeviceDriver, WriteHW) {
 	driver.write(0xbb, 0x1);
 }
 
+TEST(DeviceDriver, ReadException) {
+	int exception_occur = 0;
+	FlashMock mock;
+	EXPECT_CALL(mock, read(0xbb))
+		.WillOnce(Return(1))
+		.WillRepeatedly(Return(0));
+
+	DeviceDriver driver{ &mock };
+	try {
+		int data = driver.read(0xbb);
+	}
+	catch (ReadFailException& e) {
+		exception_occur = 1;
+	}
+	
+	EXPECT_EQ(1, exception_occur);
+}
+
+TEST(DeviceDriver, WriteException) {
+	int exception_occur = 0;
+	FlashMock mock;
+	EXPECT_CALL(mock, read(0xbb))
+		.WillRepeatedly(Return(0));
+
+	DeviceDriver driver{ &mock };
+	try {
+		driver.write(0xbb, 0x1);
+	}
+	catch (WriteFailException& e) {
+		exception_occur = 1;
+	}
+
+	EXPECT_EQ(1, exception_occur);
+}
+
 int main() {
 	::testing::InitGoogleMock();
 	return RUN_ALL_TESTS();
