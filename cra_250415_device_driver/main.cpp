@@ -43,6 +43,7 @@ TEST(DeviceDriver, ReadException) {
 		int data = driver.read(0xbb);
 	}
 	catch (ReadFailException& e) {
+		std::cout << e.what() << std::endl;
 		exception_occur = 1;
 	}
 	
@@ -60,6 +61,7 @@ TEST(DeviceDriver, WriteException) {
 		driver.write(0xbb, 0x1);
 	}
 	catch (WriteFailException& e) {
+		std::cout << e.what() << std::endl;
 		exception_occur = 1;
 	}
 
